@@ -7,13 +7,6 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 <body>
-	<script type="text/template" id="header-template">
-		<div class="wrapper">
-			<div class="container">
-				<img class="ui small circular image" src="/imgs/350.png" />
-			</div>
-		</div>
-	</script>
 	<div id="header"></div>
 	<section>
 		<div id="summary"></div>
@@ -27,39 +20,7 @@
 	<section>
 		<div id="education"></div>
 	</section>
-	<script src="js/lib/jquery-1.10.2.min.js"></script>
-	<script src="js/lib/bootstrap.min.js"></script>
-	<script src="js/lib/underscore-min.js"></script>
-	<script src="js/lib/backbone-min.js"></script>
-	<script src="js/lib/semantic.js"></script>
+
+    <script data-main="js/main" src="js/require.js"></script>
 </body>
-
-<script type="text/javascript">
-	/* 	model 	*/
-	var app = {}; // create namespace for our app
-	    app.Profile = Backbone.Model.extend({
-	      	defaults: {
-	      		name: ''
-	      	}
-	    });
-
-	var profile = new app.Profile({name: 'so choi'}); // create object with the attributes specified.
-
-	/*	views  */
-	    app.HeaderNavView = Backbone.View.extend({
-			tagName: 'li',
-			template: _.template($('#header-template').html()),
-			render: function(){
-				this.$el.html(this.template(this.model.toJSON()));
-				this.input = this.$('.edit');
-				return this; // enable chained calls
-			},
-
-			initialize: function(){
-			    this.render();
-		    }      
-	    });
-
-	var appView = new app.HeaderNavView({ el: $("#header"), model: profile })
-</script>
 </html>
