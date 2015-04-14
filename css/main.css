@@ -16,14 +16,73 @@
     margin-left: -0.25em;
 }
 .container{
+    margin: 0 auto;
     border-radius: 5px;
     color: #222;
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
-    width: 90%;
+    width: 100%;
+    position: absolute;
+    z-index: 10;
+    top: 25%; left: 0;
+    margin-top: 85px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     text-align: center;
+}
+.btn-container{
+    margin: 0 auto;
+    width: 100%;
+    z-index: 1;
+    top: 20%; left: 0;
+    position: absolute;
+    display: none;
 }
 .container img{
     margin: 0 auto;
+}
+.circular.segment{
+  width: 175px;
+  height: 175px;
+}
+.ui.header:first-child{
+  margin-top: 1.5em;
+}
+.ui.header{
+  margin: auto;
+}
+.ui.floated.segment, .ui[class*="left floated"].segment{
+  margin-right: 0;
+}
+.ui.floated.segment, .ui[class*="right floated"].segment{
+  margin-left: 0;
+}
+
+#noblesteps-btn{
+  background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/noblesteps.png');
+  background-size: 150%;
+  background-position: center top;
+  display: none;
+}
+
+#wastelands-btn{
+  background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/wastelands.png');
+  background-size: 100%;
+  background-position: center 30%;
+  display: none;
+}
+
+#liveabetes-btn{
+  background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/liveabetes.png');
+  background-size: 100%;
+  background-position: center;
+  display: none;
+}
+
+#weltgeist-btn{
+  background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/square-image.png');
+  background-size: 100%;
+  background-position: center;
+  display: none;
 }
 
 @-webkit-keyframes shake {
@@ -60,13 +119,80 @@
   }
 }
 
+@-webkit-keyframes boxAround {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    -webkit-transform: translate3d(-85px, -85px, 0);
+            transform: translate3d(-85px, -85px, 0);
+  }
+
+  50% {
+    -webkit-transform: translate3d(85px, -85px, 0);
+            transform: translate3d(85px, -85px, 0);
+  }
+
+  75%{
+    -webkit-transform: translate3d(85px, 85px, 0);
+            transform: translate3d(85px, 85px, 0);
+  }
+
+  100%{
+    -webkit-transform: translate3d(-85px, 85px, 0);
+            transform: translate3d(-85px, 85px, 0);
+  }
+}
+
+@keyframes boxAround {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+
+  25% {
+    -webkit-transform: translate3d(-85px, -85px, 0);
+            transform: translate3d(-85px, -85px, 0);
+  }
+
+  50% {
+    -webkit-transform: translate3d(85px, -85px, 0);
+            transform: translate3d(85px, -85px, 0);
+  }
+
+  75%{
+    -webkit-transform: translate3d(85px, 85px, 0);
+            transform: translate3d(85px, 85px, 0);
+  }
+
+  100%{
+    -webkit-transform: translate3d(-85px, 85px, 0);
+            transform: translate3d(-85px, 85px, 0);
+  }
+}
+
+.boxAround {
+  -webkit-animation-name: boxAround;
+  animation-name: boxAround;
+}
+
 .shake {
   -webkit-animation-name: shake;
           animation-name: shake;
 }
+
 .animated {
   -webkit-animation-duration: 1s;
           animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.slow-animated {
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-fill-mode: both;
           animation-fill-mode: both;
 }
