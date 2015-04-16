@@ -8,74 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 <body>
-	<div id="header">
-		<div class="wrapper">
-			<div class="container">
-				<img class="ui small circular image" id="avatar" src="/imgs/350.png" />
-			</div>
-		</div>
-	</div>
-	<section>
-		<div id="summary"></div>
-	</section>
-	<section>
-		<div id="projects"></div>
-	</section>
-	<section>
-		<div id="skills"></div>
-	</section>
-	<section>
-		<div id="education"></div>
-	</section>
-	<div class="ui two column centered grid btn-container" style="margin: 0">
-      	<div class="column"><div class="ui right floated inverted circular segment" id="noblesteps-btn">
-      		<h2 class="ui header">noblesteps</h2>
-      		<div class="sub header">fwd.us</div>
-      	</div></div>
-      	<div class="column"><div class="ui left floated inverted circular segment" id="wastelands-btn">
-      		<h2 class="ui header">wastelands</h2>
-      		<div class="sub header">cordova + keen.io</div>
-      	</div></div>
-      	<div class="column"><div class="ui right floated inverted circular segment" id="liveabetes-btn">
-      		<h2 class="ui header">liveabetes</h2>
-      		<div class="sub header">angelhack sf</div>
-      	</div></div>
-      	<div class="column"><div class="ui left floated inverted circular segment" id="weltgeist-btn">
-      		<h2 class="ui header">weltgeist</h2>
-      		<div class="sub header">idea hack</div>
-      	</div></div>
-  	</div>
-
-	<script>
-		require(['domReady!'], function (doc) {
-			$("#avatar").hover(function() {
-					$( this ).addClass("animated shake");
-				}, function() {
-					$( this ).removeClass("animated shake");
-				});
-
-			$("#avatar").on("click", function(){
-				// $(this).animate({"left": "-=100px"}, "slow")
-					// .delay(100).animate({"left": "+=200px"}, "slow")
-					// .delay(100).addClass(boxAround);
-				// $(this).clone().appendTo(".container").attr("id", "left-top-btn").css("transform", "translateX:-100px");
-				$(this).removeClass('shake');
-				$(this).addClass("slow-animated boxAround");
-				$('#noblesteps-btn').show(750, function(){
-					$('#wastelands-btn').show(750, function(){
-						$('#weltgeist-btn').show(750, function(){
-							$('#liveabetes-btn').show(750, function(){
-								$('#avatar').hide();
-							});
-						})
-					})
-				});
-				$(this).addClass("slow-animated boxAround");
-				$(this).addClass("slow-animated boxAround");
-				$(this).unbind("mouseenter mouseleave");
-			})
-		});
-	</script>
+	<div id="header"></div>
+	<div class="ui two column centered grid btn-container" id="proj-container" style="margin: 0"></div>
 </body>
-
 </html>
