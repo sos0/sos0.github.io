@@ -33,9 +33,8 @@
     margin: 0 auto;
     width: 100%;
     z-index: 1;
-    top: 20%; left: 0;
+    top: 19.5%; left: 0;
     position: absolute;
-    display: none;
 }
 .container img{
     margin: 0 auto;
@@ -50,39 +49,42 @@
 .ui.header{
   margin: auto;
 }
-.ui.floated.segment, .ui[class*="left floated"].segment{
-  margin-right: 0;
+.ui.inverted.segment{
+  cursor: pointer;
 }
-.ui.floated.segment, .ui[class*="right floated"].segment{
-  margin-left: 0;
+.circular-btn:hover{
+  transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+.column:nth-child(even) > .circular-btn{
+  float: left;
+}
+.column:nth-child(odd) > .circular-btn{
+  float:right;
 }
 
 #noblesteps-btn{
   background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/noblesteps.png');
   background-size: 150%;
   background-position: center top;
-  display: none;
 }
 
 #wastelands-btn{
   background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/wastelands.png');
   background-size: 100%;
   background-position: center 30%;
-  display: none;
 }
 
 #liveabetes-btn{
   background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/liveabetes.png');
   background-size: 100%;
   background-position: center;
-  display: none;
 }
 
 #weltgeist-btn{
-  background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/square-image.png');
+  background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/weltgeist.png');
   background-size: 100%;
-  background-position: center;
-  display: none;
+  background-position: bottom;
 }
 
 @-webkit-keyframes shake {
@@ -126,23 +128,23 @@
   }
 
   25% {
-    -webkit-transform: translate3d(-85px, -85px, 0);
-            transform: translate3d(-85px, -85px, 0);
+    -webkit-transform: translate3d(-100px, -100px, 0);
+            transform: translate3d(-100px, -100px, 0);
   }
 
   50% {
-    -webkit-transform: translate3d(85px, -85px, 0);
-            transform: translate3d(85px, -85px, 0);
+    -webkit-transform: translate3d(100px, -100px, 0);
+            transform: translate3d(100px, -100px, 0);
   }
 
   75%{
-    -webkit-transform: translate3d(85px, 85px, 0);
-            transform: translate3d(85px, 85px, 0);
+    -webkit-transform: translate3d(100px, 100px, 0);
+            transform: translate3d(100px, 100px, 0);
   }
 
   100%{
-    -webkit-transform: translate3d(-85px, 85px, 0);
-            transform: translate3d(-85px, 85px, 0);
+    -webkit-transform: translate3d(-100px, 100px, 0);
+            transform: translate3d(-100px, 100px, 0);
   }
 }
 
@@ -153,23 +155,23 @@
   }
 
   25% {
-    -webkit-transform: translate3d(-85px, -85px, 0);
-            transform: translate3d(-85px, -85px, 0);
+    -webkit-transform: translate3d(-100px, -100px, 0);
+            transform: translate3d(-100px, -100px, 0);
   }
 
   50% {
-    -webkit-transform: translate3d(85px, -85px, 0);
-            transform: translate3d(85px, -85px, 0);
+    -webkit-transform: translate3d(100px, -100px, 0);
+            transform: translate3d(100px, -100px, 0);
   }
 
   75%{
-    -webkit-transform: translate3d(85px, 85px, 0);
-            transform: translate3d(85px, 85px, 0);
+    -webkit-transform: translate3d(100px, 100px, 0);
+            transform: translate3d(100px, 100px, 0);
   }
 
   100%{
-    -webkit-transform: translate3d(-85px, 85px, 0);
-            transform: translate3d(-85px, 85px, 0);
+    -webkit-transform: translate3d(-100px, 100px, 0);
+            transform: translate3d(-100px, 100px, 0);
   }
 }
 

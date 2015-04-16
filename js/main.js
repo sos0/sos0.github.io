@@ -1,15 +1,17 @@
+'use strict';
+
 require.config({
   	shim: {
-  	  underscore: {
-  	    exports: '_'
-  	  },
-  	  backbone: {
-  	    deps: ['underscore', 'jquery'],
-  	    exports: 'Backbone'
-  	  },
-  	  semantic: {
-  	  	deps: ['jquery']
-  	  }
+  	    underscore: {
+            exports: '_'
+        },
+  	    backbone: {
+            deps: ['underscore', 'jquery'],
+            exports: 'Backbone'
+        },
+        semantic: {
+            deps: ['jquery']
+        }
   	},
   	paths: {
 	    jquery: 'lib/jquery-1.10.2.min',
@@ -21,9 +23,11 @@ require.config({
 });
 
 require([
-	'jquery',
-	'app'
-], function($, App){
-	// The "app" dependency is passed in as "App"
-	App.initialize();
+	'backbone',
+	'app',
+    'router'
+], function(Backbone, App, Router){
+    new Router();
+    Backbone.history.start();
+	new App();
 });
