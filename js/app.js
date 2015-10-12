@@ -4,12 +4,10 @@ define([
 	'underscore',
 	'backbone',
 	'semantic',
-	'collections/projectCollection',
 	'collections/categoryCollection',
-	'views/projectView',
 	'views/categoryView',
 	'text!templates/header.html'
-], function($, _, Backbone, Semantic, Projects, Categories, ProjectView, CategoryView, mainTemplate, Router){
+], function($, _, Backbone, Semantic, Categories, CategoryView, mainTemplate, Router){
 	'use strict';
 
 	var AppView = Backbone.View.extend({
@@ -37,21 +35,8 @@ define([
 			$('#header > .container').removeClass('container-init');
 			this.disableAvatar();
 		},
-		initProjectPage: function(){
-			this.$currentContainer = $('#proj-container');
-			this.$currentContainer.html('');
-			Projects.each(this.initProject, this);
-			$('#proj-container > .column > *').unwrap();
-			$('#header > .wrapper > *').unwrap();
-			$('#header > .container').removeClass('container-init');
-			// this.disableAvatar();
-		},
 		initCategory: function(category){
 			var view = new CategoryView({ model: category });
-			this.$currentContainer.append(view.render().el);
-		},
-		initProject: function(proj){
-			var view = new ProjectView({ model: proj });
 			this.$currentContainer.append(view.render().el);
 		},
 		disableAvatar: function(){

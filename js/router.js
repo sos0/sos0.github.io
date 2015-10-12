@@ -10,6 +10,7 @@ define([
         routes: {
             // Define some URL routes
             'profile': 'showProfile',
+            
             // "":'defaultAction'
 
             // Default

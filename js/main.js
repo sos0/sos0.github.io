@@ -29,5 +29,5 @@ require([
 ], function(Backbone, App, Router){
     new Router();
     Backbone.history.start();
-	new App();
+    new App();
 });
