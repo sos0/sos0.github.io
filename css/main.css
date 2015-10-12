@@ -1,3 +1,29 @@
+#proj-container > .card > .image {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    width: auto;
+    height: 150px;
+     -webkit-flex: 0 0 auto; 
+    -ms-flex: 0 0 auto;
+     flex: 0 0 auto; 
+    padding: 0em;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+#proj-container > .card > .image > img {
+    display: block;
+    min-width: 250%; 
+    min-height: 100%; 
+    border-radius: inherit;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    bottom: -9999px;
+    right: -9999px;
+    margin: auto;
+}
+
 .wrapper {
     height: 100%;
     max-width: 500px;
@@ -15,18 +41,20 @@
     vertical-align: middle;
     margin-left: -0.25em;
 }
+.container-init{
+    position: absolute;
+    z-index: 10;
+    top: 25%; left: 0;
+    margin-top: 85px;
+}
 .container{
     margin: 0 auto;
     border-radius: 5px;
     color: #222;
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
     width: 100%;
-    position: absolute;
-    z-index: 10;
-    top: 25%; left: 0;
-    margin-top: 85px;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
     text-align: center;
 }
 .btn-container{
@@ -63,30 +91,6 @@
   float:right;
 }
 
-#noblesteps-btn{
-  background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/noblesteps.png');
-  background-size: 150%;
-  background-position: center top;
-}
-
-#wastelands-btn{
-  background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/wastelands.png');
-  background-size: 100%;
-  background-position: center 30%;
-}
-
-#liveabetes-btn{
-  background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/liveabetes.png');
-  background-size: 100%;
-  background-position: center;
-}
-
-#weltgeist-btn{
-  background: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55) ), url('/imgs/weltgeist.png');
-  background-size: 100%;
-  background-position: bottom;
-}
-
 @-webkit-keyframes shake {
   0%, 100% {
     -webkit-transform: translate3d(0, 0, 0);
@@ -119,65 +123,6 @@
     -webkit-transform: translate3d(2px, 0, 0);
             transform: translate3d(2px, 0, 0);
   }
-}
-
-@-webkit-keyframes boxAround {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
-
-  25% {
-    -webkit-transform: translate3d(-100px, -100px, 0);
-            transform: translate3d(-100px, -100px, 0);
-  }
-
-  50% {
-    -webkit-transform: translate3d(100px, -100px, 0);
-            transform: translate3d(100px, -100px, 0);
-  }
-
-  75%{
-    -webkit-transform: translate3d(100px, 100px, 0);
-            transform: translate3d(100px, 100px, 0);
-  }
-
-  100%{
-    -webkit-transform: translate3d(-100px, 100px, 0);
-            transform: translate3d(-100px, 100px, 0);
-  }
-}
-
-@keyframes boxAround {
-  0% {
-    -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-  }
-
-  25% {
-    -webkit-transform: translate3d(-100px, -100px, 0);
-            transform: translate3d(-100px, -100px, 0);
-  }
-
-  50% {
-    -webkit-transform: translate3d(100px, -100px, 0);
-            transform: translate3d(100px, -100px, 0);
-  }
-
-  75%{
-    -webkit-transform: translate3d(100px, 100px, 0);
-            transform: translate3d(100px, 100px, 0);
-  }
-
-  100%{
-    -webkit-transform: translate3d(-100px, 100px, 0);
-            transform: translate3d(-100px, 100px, 0);
-  }
-}
-
-.boxAround {
-  -webkit-animation-name: boxAround;
-  animation-name: boxAround;
 }
 
 .shake {

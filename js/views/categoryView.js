@@ -3,13 +3,16 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
-	'text!templates/project.html'
-], function ($, _, Backbone, projectTemplate) {
+	'text!templates/category.html'
+], function ($, _, Backbone, categoryTemplate) {
 	'use strict';
 
-	var ProjectView = Backbone.View.extend({
-		tagName:  'div',
-		template: _.template(projectTemplate),
+	var CategoryView = Backbone.View.extend({
+		className: 'column',
+		template: _.template(categoryTemplate),
+		events: {
+			'click .circular-btn':	'clickHandler',
+		},
 
 		initialize: function () {
 			this.listenTo(this.model, 'change', this.render);
@@ -33,5 +36,5 @@ define([
 		}
 	});
 
-	return ProjectView;
+	return CategoryView;
 });
