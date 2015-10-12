@@ -16,7 +16,7 @@ define([
     var music = new Category({ name: "music", color: "red", icon: "music", description: "last.fm", url: 'http://www.last.fm/user/cookieplz' });
     var projects = new Category({ name: "projects", color: "yellow", icon: "code", description: "showcase" });
 
-    var currentCategories = new CategoryCollection([ art, books, code, food, music, projects ]);
+    var currentCategories = new CategoryCollection([ art, books, food, music, code, projects ]);
 
     return currentCategories;
 });
