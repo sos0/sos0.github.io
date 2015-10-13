@@ -14,9 +14,10 @@ define([
     var code = new Category({ name: "code", color: "blue", icon: "github", description: "github", url: 'https://github.com/sos0' });
     var food = new Category({ name: "food", color: "green", icon: "cutlery", description: "blog/food porn", url: 'http://sos0.github.io/food-traveler-jekyll/' });
     var music = new Category({ name: "music", color: "red", icon: "music", description: "last.fm", url: 'http://www.last.fm/user/cookieplz' });
-    var projects = new Category({ name: "projects", color: "yellow", icon: "code", description: "showcase" });
+    var projects = new Category({ name: "hacks", color: "grey", icon: "code", description: "unfinished projects" });
+    var apps = new Category({ name: "apps", color: "yellow", icon: "rocket", description: "live showcase" });
 
-    var currentCategories = new CategoryCollection([ art, books, food, music, code, projects ]);
+    var currentCategories = new CategoryCollection([ art, books, food, music, code, projects, apps ]);
 
     return currentCategories;
 });

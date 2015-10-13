@@ -57,12 +57,13 @@
     padding-bottom: 2rem;
     text-align: center;
 }
-.btn-container{
-    margin: 0 auto;
-    width: 100%;
-    z-index: 1;
-    top: 19.5%; left: 0;
-    position: absolute;
+#btn-container{
+  margin: 10px auto;
+  width: 100%;
+  text-align: left;
+}
+#back-btn i{
+  margin-right: 10px;
 }
 .container img{
     margin: 0 auto;

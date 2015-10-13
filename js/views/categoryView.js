@@ -13,7 +13,7 @@ define([
 		className: 'column',
 		template: _.template(categoryTemplate),
 		events: {
-			'click':	'navigate',
+			'click'			 : 'navigate'
 		},
 
 		initialize: function () {
@@ -23,6 +23,7 @@ define([
 
 		// Re-render the titles of the todo item.
 		render: function () {
+			$('#btn-container').hide();
 			this.$el.html(this.template(this.model.toJSON()));
 			return this;
 		},
@@ -30,14 +31,19 @@ define([
 		// Toggle the `"completed"` state of the model.
 		navigate: function () {
 			var url = this.model.get('url');
+			var name = this.model.get('name');
 			if(url !== '#' ){
 				window.open(url);
 			}else{
-				this.initProjectPage();
+				if(name == 'hacks'){
+					this.initProjectPage();
+				}
 			}
 		},
         initProjectPage: function(){
 			$('#category-container').hide();
+			$('#btn-container').show();
+			$('#proj-container').show();
             this.$currentContainer = $('#proj-container');
             this.$currentContainer.html('');
             Projects.each(this.initProject, this);

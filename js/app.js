@@ -16,7 +16,8 @@ define([
 		events: {
 			'mouseover #avatar' : 'addShakeAvatar',
 			'mouseout #avatar'  : 'removeShakeAvatar',
-			'click #avatar'		: 'initPage'
+			'click #avatar'		: 'initPage',
+			'click #back-btn'	: 'displayCategories'
 		},
 		initialize: function(){
 			this.$el.html(this.template);
@@ -26,6 +27,13 @@ define([
 		render: function(){
 			// Append our compiled template to this Views "el"
 			return this;
+		},
+
+		displayCategories: function(){
+			alert('hi')
+			$('#category-container').show();
+			$('#btn-container').hide();
+			$('proj-container').hide();
 		},
 		initPage: function(){
 			this.$currentContainer = $('#category-container');
