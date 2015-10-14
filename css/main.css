@@ -78,9 +78,6 @@
 .ui.header{
   margin: auto;
 }
-.ui.inverted.segment{
-  cursor: pointer;
-}
 .circular-btn:hover{
   transform: scale(1.1, 1.1);
   transform: scale(1.1, 1.1);

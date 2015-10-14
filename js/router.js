@@ -2,21 +2,32 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'semantic'
-], function($, _, Backbone, Semantic){
+    'views/projectCollectionView',
+], function($, _, Backbone, ProjectCollectionView){
     'use strict';
 
     var AppRouter = Backbone.Router.extend({
         routes: {
             // Define some URL routes
-            'profile': 'showProfile',
+            '/hacks': 'showProjects',
+            '/apps': 'showLiveApps',
             
             // "":'defaultAction'
 
             // Default
             '*actions': 'defaultAction'
         },
-        showProfile: function(){
+        initialize: function(){
+            console.log('router on!');
+        },
+        showProjects: function(){
+            new ProjectCollectionView();
+        },
+        initProject: function(proj){
+            var view = new ProjectView({ model: proj });
+            $('#proj-container').append(view.render().el);
+        },
+        showLiveApps: function(){
             // var profileView = new ProfileView();
             // profileView.render();
         },

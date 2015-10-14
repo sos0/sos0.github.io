@@ -13,8 +13,9 @@ define([
         initialize: function(){
             // console.log("project initialized.");
         },
-        printDetails: function(){
-            console.log(this);
+        clear: function(){
+            this.destroy();
+            this.view.remove();
         }
     });
 

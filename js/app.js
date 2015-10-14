@@ -4,10 +4,9 @@ define([
 	'underscore',
 	'backbone',
 	'semantic',
-	'collections/categoryCollection',
-	'views/categoryView',
+	'views/categoryCollectionView',
 	'text!templates/header.html'
-], function($, _, Backbone, Semantic, Categories, CategoryView, mainTemplate, Router){
+], function($, _, Backbone, Semantic, CategoryCollectionView, mainTemplate){
 	'use strict';
 
 	var AppView = Backbone.View.extend({
@@ -16,36 +15,19 @@ define([
 		events: {
 			'mouseover #avatar' : 'addShakeAvatar',
 			'mouseout #avatar'  : 'removeShakeAvatar',
-			'click #avatar'		: 'initPage',
-			'click #back-btn'	: 'displayCategories'
+			'click #avatar'		: 'initPage'
 		},
 		initialize: function(){
 			this.$el.html(this.template);
-
-			// this.listenTo(Categories, 'all', this.render);
 		},
 		render: function(){
-			// Append our compiled template to this Views "el"
 			return this;
 		},
-
-		displayCategories: function(){
-			alert('hi')
-			$('#category-container').show();
-			$('#btn-container').hide();
-			$('proj-container').hide();
-		},
 		initPage: function(){
-			this.$currentContainer = $('#category-container');
-			this.$currentContainer.html('');
-			Categories.each(this.initCategory, this);
+			new CategoryCollectionView();
 			$('#header > .wrapper > *').unwrap();
 			$('#header > .container').removeClass('container-init');
 			this.disableAvatar();
-		},
-		initCategory: function(category){
-			var view = new CategoryView({ model: category });
-			this.$currentContainer.append(view.render().el);
 		},
 		disableAvatar: function(){
 			this.$el.off('click mouseover mouseout', '#avatar');

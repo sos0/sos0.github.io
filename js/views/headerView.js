@@ -1,12 +1,8 @@
 define([
-	// These are path alias that we configured in our bootstrap
 	'jquery',
-	'underscore',
 	'backbone',
-	'semantic',
 	'text!templates/header.html'
-], function($, _, Backbone, Semantic, headerTemplate){
-	// They will not be accessible in the global scope
+], function($, Backbone, headerTemplate){
 	var HeaderView = Backbone.View.extend({
 		el: $('#header'),
 		render: function(){
