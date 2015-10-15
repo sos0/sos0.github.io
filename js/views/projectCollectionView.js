@@ -15,7 +15,8 @@ define([
 		},
 
 		render: function () {
-			this.$el.html('');
+			this.$el.html('').show();
+			$('#btn-container').show();
 			Projects.each(function(item){
 				this.renderItem(item);
 			}, this);

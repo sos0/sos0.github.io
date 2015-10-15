@@ -28,6 +28,6 @@ require([
   'router'
 ], function(Backbone, App, Router){
     var router = new Router();
-    Backbone.history.start({ pushState: true });
+    Backbone.history.start();
     var app = new App();
 });

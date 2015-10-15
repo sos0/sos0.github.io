@@ -9,8 +9,8 @@ define([
     var AppRouter = Backbone.Router.extend({
         routes: {
             // Define some URL routes
-            '/hacks': 'showProjects',
-            '/apps': 'showLiveApps',
+            'hacks': 'showProjects',
+            'apps': 'showLiveApps',
             
             // "":'defaultAction'
 
@@ -21,6 +21,7 @@ define([
             console.log('router on!');
         },
         showProjects: function(){
+            $('#category-container').hide();
             new ProjectCollectionView();
         },
         initProject: function(proj){

@@ -15,7 +15,7 @@ define([
 		},
 
 		render: function () {
-			this.$el.html('');
+			this.$el.html('').show();
 			Categories.each(function(item){
 				this.renderItem(item);
 			}, this);
