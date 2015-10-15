@@ -15,7 +15,7 @@ define([
 		events: {
 			'mouseover #avatar' : 'addShakeAvatar',
 			'mouseout #avatar'  : 'removeShakeAvatar',
-			'click #avatar'		: 'initPage'
+			'click #avatar'		: 'disableAvatar'
 		},
 		initialize: function(){
 			this.$el.html(this.template);
@@ -23,15 +23,8 @@ define([
 		render: function(){
 			return this;
 		},
-		initPage: function(){
-			new CategoryCollectionView();
-			$('#header > .wrapper > *').unwrap();
-			$('#header > .container').removeClass('container-init');
-			this.disableAvatar();
-		},
 		disableAvatar: function(){
 			this.$el.off('click mouseover mouseout', '#avatar');
-			return false;
 		},
 		addShakeAvatar: function(e){
 			$(e.currentTarget).addClass("animated shake");

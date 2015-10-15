@@ -2,13 +2,15 @@ define([
     'jquery',
     'underscore',
     'backbone',
+    'views/categoryCollectionView',
     'views/projectCollectionView',
-], function($, _, Backbone, ProjectCollectionView){
+], function($, _, Backbone, CategoryCollectionView, ProjectCollectionView){
     'use strict';
 
     var AppRouter = Backbone.Router.extend({
         routes: {
             // Define some URL routes
+            'categories': 'showCategories',
             'hacks': 'showProjects',
             'apps': 'showLiveApps',
             
@@ -20,17 +22,24 @@ define([
         initialize: function(){
             console.log('router on!');
         },
+        showCategories: function(){
+            $('#btn-container').hide();
+            $('#proj-container').hide();
+            new CategoryCollectionView();
+            $('#header > .wrapper > *').unwrap();
+            $('#header > .container').removeClass('container-init');
+            this.disableAvatar();
+        },
         showProjects: function(){
             $('#category-container').hide();
             new ProjectCollectionView();
         },
-        initProject: function(proj){
-            var view = new ProjectView({ model: proj });
-            $('#proj-container').append(view.render().el);
-        },
         showLiveApps: function(){
             // var profileView = new ProfileView();
             // profileView.render();
+        },
+        disableAvatar: function(){
+            $('#avatar').off('mouseover mouseout', '#avatar');
         },
         defaultAction: function(){
             // var headerView = new HeaderView();
