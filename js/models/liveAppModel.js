@@ -4,12 +4,12 @@ define([
 ], function (_, Backbone) {
     'use strict';
 
-    var ProjectModel = Backbone.Model.extend({
+    var LiveAppModel = Backbone.Model.extend({
         defaults: {
             name: "Not specified",
-            location: "Not specified",
             description: "Not specified",
-            src: "Not specified"
+            url: "#",
+            src: ""
         },
         initialize: function(){
             // console.log("project initialized.");
@@ -20,5 +20,5 @@ define([
         }
     });
 
-    return ProjectModel;
+    return LiveAppModel;
 });

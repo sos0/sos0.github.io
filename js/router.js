@@ -4,7 +4,8 @@ define([
     'backbone',
     'views/categoryCollectionView',
     'views/projectCollectionView',
-], function($, _, Backbone, CategoryCollectionView, ProjectCollectionView){
+    'views/liveAppCollectionView',
+], function($, _, Backbone, CategoryCollectionView, ProjectCollectionView, LiveAppCollectionView){
     'use strict';
 
     var AppRouter = Backbone.Router.extend({
@@ -35,8 +36,8 @@ define([
             new ProjectCollectionView();
         },
         showLiveApps: function(){
-            // var profileView = new ProfileView();
-            // profileView.render();
+            $('#category-container').hide();
+            new LiveAppCollectionView();
         },
         disableAvatar: function(){
             $('#avatar').off('mouseover mouseout', '#avatar');

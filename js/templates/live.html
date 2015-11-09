@@ -1,0 +1,13 @@
+<% if(url == '#') { %>
+    <a id="<%- name %>" href="#<%- name %>" class="card">
+<% } else { %>
+    <a id="<%- name %>" href="<%- url %>" target="_blank" class="card">
+<% } %>
+    <div class="image">
+    	<img src="/imgs/<%- src %>.png">
+    </div>
+    <div class="content">
+        <div class="header" href="#"><%- name %></div>
+        <div class="meta"><%- description %></div>
+	</div>
+</a>
